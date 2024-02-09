@@ -69,7 +69,8 @@ def execute_commands(gpt_response):
         respond_to_user("I have taken a note.")
 
     if (lines[0] == "question"):
-        respond_to_user(lines[1])
+        text_after_question = gpt_response.split("question", 1)[-1].strip()
+        respond_to_user(text_after_question)
     print("Press Enter to start recording")
 
 
